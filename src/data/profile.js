@@ -3,7 +3,7 @@
 
 export const profile = {
   name: "Khalak Tariq",
-  title: "Full Stack Web Developer | UI/UX Designer",
+  title: "Full Stack Web Developer",
   location: "Modasa, Gujarat, India",
   email: "khalaktariq24@gmail.com",
   phone: "+91 9601077787",
@@ -23,11 +23,24 @@ export const skills = [
   },
   {
     category: "Frontend",
-    items: ["React.js", "HTML5", "CSS3", "Bootstrap", "Tailwind CSS", "Responsive Web Design"],
+    items: [
+      "React.js",
+      "HTML5",
+      "CSS3",
+      "Bootstrap",
+      "Tailwind CSS",
+      "Responsive Web Design",
+    ],
   },
   {
     category: "Backend",
-    items: ["Node.js", "Express.js", "REST APIs", "JWT Authentication", "CRUD Operations"],
+    items: [
+      "Node.js",
+      "Express.js",
+      "REST APIs",
+      "JWT Authentication",
+      "CRUD Operations",
+    ],
   },
   {
     category: "Database",
@@ -35,7 +48,14 @@ export const skills = [
   },
   {
     category: "UI/UX",
-    items: ["Figma", "Wireframing", "Prototyping", "Typography", "Visual Hierarchy", "Grid Systems"],
+    items: [
+      "Figma",
+      "Wireframing",
+      "Prototyping",
+      "Typography",
+      "Visual Hierarchy",
+      "Grid Systems",
+    ],
   },
   {
     category: "Tools & Deployment",
@@ -43,7 +63,16 @@ export const skills = [
   },
   {
     category: "AI-Assisted Development",
-    items: ["ChatGPT", "Claude", "Gemini", "DeepSeek", "Midjourney", "NotebookLM", "Julius AI", "Blackbox AI"],
+    items: [
+      "ChatGPT",
+      "Claude",
+      "Gemini",
+      "DeepSeek",
+      "Midjourney",
+      "NotebookLM",
+      "Julius AI",
+      "Blackbox AI",
+    ],
     note: "Used for development assistance, debugging, documentation, research, and AI image/video generation.",
   },
 ];
@@ -53,7 +82,7 @@ export const languages = ["English", "Hindi", "Gujarati"];
 export const experience = [
   {
     role: "MERN Stack Development Intern",
-    company: "InfoLabz",
+    company: "InfoLabz IT Services Pvt. Ltd.",
     dates: "Jan 2026 – May 2026",
     points: [
       "Built responsive React.js UIs with reusable components and API-driven rendering.",
@@ -61,6 +90,7 @@ export const experience = [
     ],
     tech: ["React.js", "Express.js", "MongoDB", "JWT", "Axios"],
   },
+
   {
     role: "Full Stack Web Development Intern",
     company: "Jyesta Corporate Entity",
@@ -70,6 +100,17 @@ export const experience = [
     ],
     tech: ["HTML5", "CSS3", "JavaScript", "Bootstrap"],
   },
+
+  {
+    role: "Python (Django) Web Development Intern",
+    company: "InfoLabz IT Services Pvt. Ltd.",
+    dates: "02 Jul 2025 – 16 Jul 2025 | 15 days",
+    points: [
+      "Completed a summer internship focused on Web Development using Python and the Django Framework.",
+      "Worked on practical Django concepts and hands-on implementation, developing the foundation for the PhotoPholio project.",
+    ],
+    tech: ["Python", "Django"],
+  },
 ];
 
 // Projects, ordered by priority. `featured: true` gets the strongest visual treatment.
@@ -77,6 +118,7 @@ export const projects = [
   {
     slug: "on-demand-booking",
     name: "On-Demand Service Booking & Scheduling Platform",
+    image: "/projects/On-Demand.png",
     featured: true,
     summary:
       "A full-stack service marketplace where users discover, filter, and book services, with authenticated accounts and online payments.",
@@ -92,12 +134,44 @@ export const projects = [
       "Mobile-first responsive UI",
     ],
     tech: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "Razorpay"],
-    github: "https://github.com/tariq2424/on-demand-service-booking-scheduling-platform",
+    github:
+      "https://github.com/tariq2424/on-demand-service-booking-scheduling-platform",
     live: "https://on-demand-service-booking-scheduling-9ta1.onrender.com/",
   },
   {
+    slug: "photopholio",
+    name: "PhotoPholio — Photographer Booking Platform",
+    image: "/projects/PhotoPholio.png",
+    featured: false,
+    summary:
+      "A Django-based photographer booking platform where users can discover photographers, explore portfolios, book dates, complete demo payments, and leave reviews.",
+    features: [
+      "Photographer search and filtering by city, style, rating and availability",
+      "Photographer profiles with portfolio galleries and client reviews",
+      "Django authentication with user registration and login",
+      "Booking validation with date and double-booking prevention",
+      "Demo payment and booking confirmation flow",
+      "Customized Django admin with Jazzmin",
+      "Responsive Bootstrap 5 user interface",
+    ],
+    tech: [
+      "Python",
+      "Django",
+      "SQLite",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Bootstrap 5",
+      "Pillow",
+    ],
+    github: "https://github.com/tariq2424/photopholio",
+    live: "https://khalaktariq.pythonanywhere.com/",
+  },
+
+  {
     slug: "designhub",
     name: "DesignHub — UI Template Marketplace",
+    image: "/projects/DesignHub.png",
     featured: false,
     summary:
       "A marketplace for downloadable UI templates with complete HTML/CSS source code, backed by a MySQL database.",
@@ -111,23 +185,9 @@ export const projects = [
     live: "https://design-hub-budi.onrender.com",
   },
   {
-    slug: "anime-manga",
-    name: "Anime & Manga Discovery Platform",
-    featured: false,
-    summary:
-      "A React app that pulls from third-party APIs for real-time anime and manga search and discovery.",
-    features: [
-      "Third-party REST API integration",
-      "Real-time search",
-      "Mobile-first responsive React UI",
-    ],
-    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "REST APIs"],
-    github: "https://github.com/tariq2424/anime-manga-api-web-application",
-    live: "https://tariq2424.github.io/anime-manga-api-web-application/",
-  },
-  {
     slug: "timetable-scheduler",
     name: "Smart Classroom Timetable Scheduler",
+    image: "/projects/Smartclassroom.png",
     featured: false,
     summary:
       "A real-time timetable generator that builds academic schedules from faculty, subject, and branch data.",
@@ -143,6 +203,7 @@ export const projects = [
   {
     slug: "jio-homes-ui",
     name: "Jio Homes UI",
+    image: "/projects/jioHomes.png",
     featured: false,
     summary:
       "A responsive Jio Homes-inspired interface recreating the layout and UX of a modern digital home-services platform.",
@@ -153,26 +214,34 @@ export const projects = [
   },
 ];
 
+export const designWork = []
+
+/*
 export const designWork = [
   {
     name: "Travel Website",
-    description: "A destination-led travel site concept — visual layout, imagery hierarchy, and a clean booking flow.",
+    description:
+      "A destination-led travel site concept — visual layout, imagery hierarchy, and a clean booking flow.",
     figma:
       "https://www.figma.com/design/WYBjQPETWGrDHEd2d0HWro/MY-DESIGN?node-id=0-1&t=Zpk3H3WAmjKNhydn-1",
   },
   {
     name: "Dadu Footwear — E-commerce",
-    description: "An e-commerce interface for a footwear brand, covering homepage, product, and contact layouts.",
+    description:
+      "An e-commerce interface for a footwear brand, covering homepage, product, and contact layouts.",
     figma:
       "https://www.figma.com/design/WYBjQPETWGrDHEd2d0HWro/MY-DESIGN?node-id=27-2&t=Zpk3H3WAmjKNhydn-1",
   },
   {
     name: "Spider-Man: Brand New Day — Poster",
-    description: "A cinematic movie poster exploring typography, lighting, and composition.",
+    description:
+      "A cinematic movie poster exploring typography, lighting, and composition.",
     figma:
       "https://www.figma.com/design/N184qwO6PqPskdsF9mJ296/SPIDERMAN-BRAND-NEW-DAY-POSTER?node-id=0-1&t=5vAEUxEX5iXz3Txb-1",
   },
 ];
+
+*/
 
 export const education = {
   degree: "B.E. / B.Tech, Information Technology",
@@ -184,7 +253,9 @@ export const education = {
 export const certifications = [
   "MERN Stack Internship Certificate — InfoLabz",
   "Full Stack Internship Certificate — Jyesta Corporate Entity",
+  "Python (Django) Web Development Internship Certificate — InfoLabz",
   "Blockchain Seminar Certificate",
   "TOPS Technologies: Web Applications, SQL, HTML/CSS, MERN Stack, Graphic Design",
   "Diwang Mehta IT Award — Ranked 1st in College, 3rd Semester (SPI 9.04)",
 ];
+

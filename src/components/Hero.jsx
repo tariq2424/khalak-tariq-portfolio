@@ -16,7 +16,7 @@ export default function Hero() {
       <div className="content-wrap grid lg:grid-cols-[1.05fr_0.95fr] gap-14 lg:gap-10 items-center min-w-0">
         {/* Left: identity */}
         <div className="animate-rise min-w-0">
-          <p className="eyebrow mb-5 break-words">Full Stack Web Development + UI/UX Design</p>
+          <p className="eyebrow mb-5 break-words">Full Stack Web Development</p>
           <h1 className="text-[2.5rem] leading-[1.08] sm:text-5xl md:text-[3.4rem] md:leading-[1.06] font-semibold tracking-tight text-ink">
             Building full-stack products
             <br />
@@ -79,7 +79,7 @@ export default function Hero() {
             <pre className="font-mono text-[13px] leading-[1.85] p-6 overflow-x-auto text-white/80 w-full min-w-0">
 <code>{`const developer = {
   name: "Khalak Tariq",
-  role: "Full Stack + UI/UX",
+  role: "Full Stack Web Developer",
   stack: ["React", "Node.js", "Express",
           "MongoDB", "SQL", "Python"],
   design: ["Figma", "Typography",

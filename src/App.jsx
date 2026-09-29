@@ -23,7 +23,7 @@ export default function App() {
         <Projects />
         <Experience />
         <Skills />
-        <DesignShowcase />
+        {/* <DesignShowcase /> */}
         <About />
         <Contact />
       </main>

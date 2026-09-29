@@ -70,7 +70,7 @@ function FeaturedProject({ project, index }) {
       </div>
 
       <div className="order-1 lg:order-2 min-w-0">
-        <ProjectMock name={project.name} liveUrl={project.live} index={index} />
+        <ProjectMock name={project.name} liveUrl={project.live} image={project.image} index={index} />
       </div>
     </article>
   );
@@ -79,7 +79,7 @@ function FeaturedProject({ project, index }) {
 function ProjectCard({ project, index }) {
   return (
     <article className="group flex flex-col rounded-xl2 border border-border bg-surface shadow-card hover:shadow-cardHover transition-shadow overflow-hidden">
-      <ProjectMock name={project.name} liveUrl={project.live} index={index} compact />
+      <ProjectMock name={project.name} liveUrl={project.live} image={project.image} index={index} compact />
       <div className="p-6 flex flex-col flex-1">
         <h3 className="text-lg font-semibold text-ink tracking-tight">{project.name}</h3>
         <p className="mt-2.5 text-sm text-body leading-relaxed flex-1">{project.summary}</p>
