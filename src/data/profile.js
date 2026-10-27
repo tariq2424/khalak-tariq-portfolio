@@ -9,7 +9,7 @@ export const profile = {
   phone: "+91 9601077787",
   github: "https://github.com/tariq2424",
   linkedin: "https://www.linkedin.com/in/tariq-khalak",
-  resumeFile: "/Khalak_Tariq_Resume.pdf",
+  resumeFile: "/Khalak_Tariq_Final_Full_Stack_Resume.pdf",
   pitch:
     "I build full-stack web applications and design the interfaces that sit on top of them — from a Figma frame to a deployed React and Node.js product.",
   about:
@@ -165,7 +165,7 @@ export const projects = [
       "Pillow",
     ],
     github: "https://github.com/tariq2424/photopholio",
-    live: "https://khalaktariq.pythonanywhere.com/",
+    live: "https://photopholio-tof3.onrender.com/",
   },
 
   {
