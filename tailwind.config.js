@@ -1,46 +1,47 @@
 /** @type {import('tailwindcss').Config} */
+const v = (name) => `rgb(var(--${name}) / <alpha-value>)`;
+
 export default {
   content: ["./index.html", "./src/**/*.{js,jsx}"],
   theme: {
     extend: {
       colors: {
-        canvas: "#FAFBFD",
-        surface: "#FFFFFF",
-        surfacealt: "#F1F5FB",
-        ink: "#0B1220",
-        body: "#3B4657",
-        muted: "#6B7686",
-        border: "#E4E9F0",
-        accent: {
-          DEFAULT: "#2554C7",
-          dark: "#1D3FA0",
-          light: "#EEF2FF",
-        },
-        signal: "#0EA5A6",
+        canvas: v("bg"),
+        surface: v("surface"),
+        surface2: v("surface2"),
+        line: v("line"),
+        fg: v("fg"),
+        body: v("body"),
+        muted: v("muted"),
+        accent: v("accent"),
+        accenttext: v("accenttext"),
+        cyan2: v("cyan2"),
+        ok: v("ok"),
       },
       fontFamily: {
         display: ["'Space Grotesk'", "sans-serif"],
         body: ["'Inter'", "sans-serif"],
         mono: ["'JetBrains Mono'", "monospace"],
       },
-      maxWidth: {
-        content: "1180px",
-      },
+      maxWidth: { content: "1180px" },
       boxShadow: {
-        card: "0 1px 2px rgba(11,18,32,0.04), 0 8px 24px -12px rgba(11,18,32,0.10)",
-        cardHover: "0 4px 10px rgba(11,18,32,0.06), 0 20px 40px -16px rgba(11,18,32,0.16)",
+        card: "0 1px 2px rgb(0 0 0 / 0.08), 0 12px 32px -16px rgb(0 0 0 / 0.35)",
+        glow: "0 0 0 1px rgb(var(--accent) / 0.35), 0 12px 40px -12px rgb(var(--accent) / 0.45)",
       },
-      borderRadius: {
-        xl2: "1.25rem",
-      },
+      borderRadius: { xl2: "1.25rem" },
       keyframes: {
         rise: {
-          "0%": { opacity: "0", transform: "translateY(14px)" },
+          "0%": { opacity: "0", transform: "translateY(16px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        pulseDot: {
+          "0%,100%": { opacity: "1", transform: "scale(1)" },
+          "50%": { opacity: "0.45", transform: "scale(1.5)" },
         },
       },
       animation: {
-        rise: "rise 0.6s cubic-bezier(0.22,1,0.36,1) both",
+        rise: "rise 0.7s cubic-bezier(0.22,1,0.36,1) both",
+        pulseDot: "pulseDot 2s ease-in-out infinite",
       },
     },
   },

@@ -1,106 +1,48 @@
-// import { experience } from "../data/profile";
-// import SectionHeading from "./SectionHeading";
-
-// export default function Experience() {
-//   return (
-//     <section id="experience" className="section-pad py-20 md:py-28 bg-surfacealt/60">
-//       <div className="content-wrap">
-//         <SectionHeading eyebrow="Experience" title="Where I've worked" />
-
-//         <div className="grid md:grid-cols-2 gap-6">
-//           {experience.map((job) => (
-//             <article
-//               key={job.company}
-//               className="rounded-xl2 border border-border bg-surface p-7 shadow-card"
-//             >
-//               <div className="flex items-start justify-between gap-4">
-//                 <div>
-//                   <h3 className="font-semibold text-ink text-lg tracking-tight">{job.role}</h3>
-//                   <p className="text-accent-dark text-sm font-medium mt-0.5">{job.company}</p>
-//                 </div>
-//                 <span className="font-mono text-xs text-muted whitespace-nowrap pt-1">{job.dates}</span>
-//               </div>
-
-//               <ul className="mt-4 space-y-2">
-//                 {job.points.map((p) => (
-//                   <li key={p} className="flex gap-2.5 text-sm text-body leading-relaxed">
-//                     <span className="mt-2 w-1 h-1 rounded-full bg-signal flex-shrink-0" />
-//                     {p}
-//                   </li>
-//                 ))}
-//               </ul>
-
-//               <div className="mt-5 flex flex-wrap gap-1.5">
-//                 {job.tech.map((t) => (
-//                   <span key={t} className="tag-chip">
-//                     {t}
-//                   </span>
-//                 ))}
-//               </div>
-//             </article>
-//           ))}
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
-
 import { experience } from "../data/profile";
 import SectionHeading from "./SectionHeading";
+import Reveal from "./Reveal";
 
 export default function Experience() {
   return (
-    <section
-      id="experience"
-      className="section-pad py-20 md:py-28 bg-surfacealt/60"
-    >
+    <section id="experience" className="section-pad section-gap bg-surface/50 border-y border-line/15">
       <div className="content-wrap">
-        <SectionHeading eyebrow="Experience" title="Where I've worked" />
+        <SectionHeading
+          eyebrow="Experience"
+          title="Internships in MERN, Django and full-stack"
+          description="Hands-on training and team work across the MERN stack and Python Django."
+        />
 
-        <div className="grid lg:grid-cols-2 gap-6">
-          {experience.map((job) => (
-            <article
-              key={`${job.company}-${job.role}`}
-              className="rounded-xl2 border border-border bg-surface p-7 shadow-card min-w-0"
-            >
-              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+        <ol className="relative border-l border-line/15 ml-2 sm:ml-3 space-y-6">
+          {experience.map((job, i) => (
+            <Reveal as="li" key={`${job.company}-${job.role}`} delay={i * 70} className="relative pl-6 sm:pl-9">
+              <span
+                aria-hidden="true"
+                className="absolute -left-[7px] top-7 w-3.5 h-3.5 rounded-full bg-accent ring-4 ring-canvas"
+              />
+              <article className="card p-5 sm:p-6 min-w-0 grid lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.5fr)] gap-4 lg:gap-8">
                 <div className="min-w-0">
-                  <h3 className="font-semibold text-ink text-lg tracking-tight leading-snug">
-                    {job.role}
-                  </h3>
-
-                  <p className="text-accent-dark text-sm font-medium mt-1">
-                    {job.company}
-                  </p>
+                  <h3 className="font-semibold text-fg text-lg tracking-tight leading-snug">{job.role}</h3>
+                  <p className="text-accenttext text-sm font-medium mt-1">{job.company}</p>
+                  <p className="font-mono text-xs text-muted mt-1.5">{job.dates}</p>
+                  <div className="mt-3 flex flex-wrap gap-1.5">
+                    {job.tech.map((t) => (
+                      <span key={t} className="tag-chip">{t}</span>
+                    ))}
+                  </div>
                 </div>
 
-                <span className="font-mono text-xs text-muted sm:text-right sm:max-w-[180px] leading-relaxed">
-                  {job.dates}
-                </span>
-              </div>
-
-              <ul className="mt-5 space-y-2">
-                {job.points.map((p) => (
-                  <li
-                    key={p}
-                    className="flex gap-2.5 text-sm text-body leading-relaxed"
-                  >
-                    <span className="mt-2 w-1 h-1 rounded-full bg-signal flex-shrink-0" />
-                    <span>{p}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <div className="mt-5 flex flex-wrap gap-1.5">
-                {job.tech.map((t) => (
-                  <span key={t} className="tag-chip">
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </article>
+                <ul className="space-y-2.5 min-w-0">
+                  {job.points.map((p) => (
+                    <li key={p} className="flex gap-2.5 text-sm text-body leading-relaxed">
+                      <span aria-hidden="true" className="mt-[9px] w-1.5 h-1.5 rounded-full bg-gradient-to-br from-accenttext to-cyan2 flex-shrink-0" />
+                      <span>{p}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            </Reveal>
           ))}
-        </div>
+        </ol>
       </div>
     </section>
   );

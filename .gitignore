@@ -2,3 +2,6 @@ node_modules
 dist
 .DS_Store
 *.log
+
+# Private notes (not pushed to GitHub)
+FOLDER_STRUCTURE.md

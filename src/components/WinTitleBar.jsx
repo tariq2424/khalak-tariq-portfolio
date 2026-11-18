@@ -1,5 +1,3 @@
-import { WinMinimizeIcon, WinMaximizeIcon, WinCloseIcon } from "./Icons";
-
 function GlobeIcon(props) {
   return (
     <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true" {...props}>
@@ -9,28 +7,19 @@ function GlobeIcon(props) {
   );
 }
 
-export default function WinTitleBar({ title, dark = true, icon }) {
-  const iconColor = dark ? "text-white/50" : "text-ink/50";
-  const hoverBg = dark ? "hover:bg-white/10" : "hover:bg-ink/5";
-  const hoverClose = dark ? "hover:bg-[#E81123] hover:text-white" : "hover:bg-[#E81123] hover:text-white";
-
+// Browser/editor style title bar with three window dots.
+export default function WinTitleBar({ title, icon }) {
   return (
-    <div className={`flex items-center justify-between pl-3 pr-0 h-9 ${dark ? "bg-[#141B2E]" : "bg-surfacealt"} border-b ${dark ? "border-white/10" : "border-border"}`}>
-      <span className={`flex items-center gap-1.5 min-w-0 ${dark ? "text-white/45" : "text-muted"}`}>
+    <div className="flex items-center gap-3 px-3.5 h-9 bg-surface2 border-b border-line/15">
+      <span className="flex items-center gap-1.5 flex-shrink-0" aria-hidden="true">
+        <i className="block w-2.5 h-2.5 rounded-full bg-[#FF5F57]" />
+        <i className="block w-2.5 h-2.5 rounded-full bg-[#FEBC2E]" />
+        <i className="block w-2.5 h-2.5 rounded-full bg-[#28C840]" />
+      </span>
+      <span className="flex items-center gap-1.5 min-w-0 text-muted">
         {icon === "globe" && <GlobeIcon className="flex-shrink-0" />}
         <span className="font-mono text-[11px] truncate">{title}</span>
       </span>
-      <div className="flex items-center h-full flex-shrink-0">
-        <span className={`inline-flex items-center justify-center w-10 h-full ${iconColor} ${hoverBg} transition-colors`}>
-          <WinMinimizeIcon />
-        </span>
-        <span className={`inline-flex items-center justify-center w-10 h-full ${iconColor} ${hoverBg} transition-colors`}>
-          <WinMaximizeIcon />
-        </span>
-        <span className={`inline-flex items-center justify-center w-10 h-full ${iconColor} ${hoverClose} transition-colors`}>
-          <WinCloseIcon />
-        </span>
-      </div>
     </div>
   );
 }
